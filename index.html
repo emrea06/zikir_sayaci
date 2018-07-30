@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta name="author" content="www.twitter.com/cheeriottis">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="ekran">
+
+
+    <span id='screen'> 0 </span>
+
+    </div>
+    <div class="butonlar">
+      <div class="artir">
+        <button id="incrementButton">ARTIR</button>
+      </div>
+      <div class="reset">
+        <button id="resetButton">SIFIRLA</button>
+      </div>
+
+</div>
+    <script>
+    //scripte burda başla
+    //değişken adlarını div de ver
+    const state = {
+      current: 0
+    }
+
+    function increment () {
+      state.current ++
+    }
+
+    function reset () {
+      state.current=0;
+      console.log('halelulaj');
+    }
+
+    function render() {
+      document.getElementById('screen').innerText = state.current;
+    }
+
+    document.getElementById('resetButton').addEventListener('click', function(){
+      reset();
+      render();
+    });
+    document.getElementById('incrementButton').addEventListener('click', function() {
+      increment();
+      render();
+    });
+
+    //setInterval(increment, 1000);
+    //setInterval(reset, 1000*5);
+
+    //setInterval(render, 1000);
+
+
+
+    </script>
+
+  </div>
+
+    </body>
+
+
+</html>
